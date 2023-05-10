@@ -1,0 +1,30 @@
+<ion-menu [content]="content" id="menu-material">
+  <ion-content>
+    <div class="">
+      <img class="user-avatar round" src="../assets/img/logo.png" onerror="this.src='../assets/img/logo.png'">
+      <p class="name">chrigui abdelbaki</p>
+      <p class="e-mail">chabdelbaki@gmail.com</p>
+    </div>
+    <ion-list *ngIf="isAdmin()" no-lines>
+      <div *ngFor="let menuItem of adminMenuItems">
+        <button *ngIf="rootPage!=menuItem.component" menuClose="left" ion-item detail-none 
+          (click)="openPage(menuItem)">
+          <ion-icon  [name]="menuItem.icon" item-left></ion-icon>
+          {{menuItem.title}}
+        </button>
+      </div>
+
+    </ion-list>
+    <ion-list *ngIf="!isAdmin()" no-lines>
+      <div *ngFor="let menuItem of userMenuItems">
+        <button *ngIf="rootPage!=menuItem.component" menuClose="left" ion-item detail-none 
+          (click)="openPage(menuItem)">
+          <ion-icon  [name]="menuItem.icon" item-left></ion-icon>
+          {{menuItem.title}}
+        </button>
+      </div>
+
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

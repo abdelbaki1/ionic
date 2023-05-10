@@ -1,0 +1,68 @@
+<!--
+  Generated template for the AccountPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Account</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+<!-- <ion-content>
+<profile></profile>
+</ion-content> -->
+<ion-content padding>
+  <form (ngSubmit)="onSubmit()">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h3>User Information</h3>
+          <ion-list>
+            <ion-item>
+              <ion-label floating>First Name</ion-label>
+              <ion-input type="text" [(ngModel)]="firstName" name="firstName" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Last Name</ion-label>
+              <ion-input type="text" [(ngModel)]="lastName" name="lastName" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Email address</ion-label>
+              <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <!-- <ion-label floating>Profile Image</ion-label> -->
+              <upload></upload>
+              <!-- <ion-input type="file" [(ngModel)]="profileImage" name="profileImage"></ion-input> -->
+            </ion-item>
+          </ion-list>
+        </ion-col>
+        <ion-col>
+          <h3>Change Password</h3>
+          <ion-list>
+            <ion-item>
+              <ion-label floating>Current Password</ion-label>
+              <ion-input type="password" [(ngModel)]="currentPassword" name="currentPassword" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>New Password</ion-label>
+              <ion-input type="password" [(ngModel)]="newPassword" name="newPassword" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Confirm Password</ion-label>
+              <ion-input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" required></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <button ion-button type="submit" block>Save</button>
+  </form>
+</ion-content>

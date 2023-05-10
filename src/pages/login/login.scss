@@ -1,0 +1,145 @@
+.login-background {
+  background-image: url('your-image-path.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+
+    .login-box {
+      padding: 40px;
+      border-radius: 8px;
+      background-color: #fff;
+
+      .form-wrap {
+        position: relative;
+
+        h4 {
+          font-weight: 700;
+          font-size: 24px;
+          color: #333;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          margin-bottom: 20px;
+        }
+
+        .form-group {
+          position: relative;
+          margin-bottom: 20px;
+
+          ion-icon {
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: #999;
+          }
+
+          input {
+            padding-left: 40px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+            border: none;
+            border-bottom: 2px solid #999;
+            outline: none;
+            background-color: transparent;
+            width: 100%;
+
+            &::placeholder {
+              color: #999;
+            }
+          }
+        }
+
+        .text-lg-right {
+          margin-top: -10px;
+
+          a {
+            color: #999;
+            font-size: 14px;
+            text-decoration: underline;
+
+            &:hover {
+              color: #333;
+            }
+          }
+        }
+
+        .mt-30 {
+          margin-top: 30px;
+
+          button {
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 4px;
+            padding: 12px 30px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #222;
+            }
+          }
+        }
+      }
+    }
+
+    .content {
+      padding-top: 20px;
+
+      h3 {
+        font-size: 24px;
+        font-weight: 700;
+        color: #333;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+
+      a.btn-custom {
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-radius: 4px;
+        padding: 12px 30px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #222;
+        }
+      }
+
+      .socials {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+
+        ion-icon {
+          font-size: 30px;
+          color: #999;
+          margin: 0 10px;
+          cursor: pointer;
+
+          &:hover {
+            color: #333;
+          }
+        }
+      }
+    }
+  }
+}

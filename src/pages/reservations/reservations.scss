@@ -1,0 +1,213 @@
+page-reservations {
+    overflow: auto;
+    .container {
+        padding-bottom: 3rem;
+        margin-bottom: 1rem;
+
+        .card {
+            margin-bottom: 1.5rem;
+
+            .text-center {
+                text-align: center;
+            }
+
+            .text-white {
+                color: #fff;
+            }
+
+            .text-lg {
+                font-size: 1.25rem;
+            }
+
+            .bg-dark {
+                background-color: #343a40;
+            }
+
+            .rounded-top {
+                border-top-left-radius: 0.25rem;
+                border-top-right-radius: 0.25rem;
+            }
+
+            .bg-secondary {
+                background-color: #f7f7f7;
+            }
+
+            .py-3 {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+
+            .px-2 {
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+            }
+
+            .text-medium {
+                font-weight: 500;
+            }
+
+            $icon-color: #bbb;
+            $icon-color-active: #17a2b8;
+            $line-color: #ccc;
+            $line-color-active: #17a2b8;
+            $font-color: #333;
+
+            .steps {
+                
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    right: 0;
+                    border-top: 1px solid $line-color;
+                    transform: translateY(-50%);
+                    z-index: -1;
+                }
+
+                .step {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 20%;
+
+                    &:first-child:before {
+                        display: none;
+                    }
+
+                    .step-icon-wrap {
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 60px;
+                        height: 60px;
+                        border: 2px solid $icon-color;
+                        border-radius: 50%;
+                        background-color: #fff;
+
+                        .step-icon {
+                            font-size: 28px;
+                            color: $icon-color;
+                        }
+                    }
+
+                    .step-title {
+                        margin-top: 8px;
+                        font-size: 14px;
+                        font-weight: 600;
+                        text-align: center;
+                        color: $font-color;
+                    }
+
+                    &.completed .step-icon-wrap {
+                        border-color: $icon-color-active;
+
+                        .step-icon {
+                            color: $icon-color-active;
+                        }
+                    }
+
+                    &.active:before,
+                    &.completed:before {
+                        content: "";
+                        position: absolute;
+                        top: 33%;
+                        left: -40px;
+                        width: 57%;
+                        height: 2px;
+                        background-color: $line-color-active;
+                        transform: translateY(-50%);
+                        z-index: -1;
+                    }
+
+                    &.active .step-icon-wrap,
+                    &.completed .step-icon-wrap {
+                        border-color: $icon-color-active;
+
+                        .step-icon {
+                            color: $icon-color-active;
+                        }
+                    }
+
+                    &.active~.step:before,
+                    &.completed~.step:before {
+                        border-top-color: $line-color-active;
+                    }
+                }
+            }
+            .completed .step-icon {
+                border-color: #20aee3;
+                
+                color: #20aee3;
+            }
+
+            .completed .step-title {
+                color: #20aee3;
+            }
+
+            .completed+.step {
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .custom-control {
+        position: relative;
+        display: block;
+        min-height: 1.5rem;
+        padding-left: 1.5rem;
+
+        input[type="checkbox"] {
+            position: absolute;
+            margin-top: 0.25rem;
+            margin-left: -1.5rem;
+            margin-right: 0.25rem;
+        }
+
+        .custom-control-label {
+            margin-bottom: 0;
+        }
+    }
+
+    .mr-3 {
+        margin-right: 1rem;
+    }
+
+    .text-left {
+        text-align: left;
+    }
+
+    .text-sm-right {
+        text-align: right;
+    }
+
+    .btn-outline-primary {
+        color: #007bff;
+        background-color: transparent;
+        background-image: none;
+        border-color: #007bff;
+
+        &:hover {
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+    }
+
+    .btn-rounded {
+        border-radius: 2rem;
+    }
+
+    .btn-sm {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+        line-height: 1.5;
+    }
+}

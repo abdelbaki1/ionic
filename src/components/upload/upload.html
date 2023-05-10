@@ -1,0 +1,8 @@
+<div class="container-fluid">
+  <img [src]="image"  class="rounded mx-auto d-block" onerror="this.src='assets/img/logo.png'" alt="./assets/img/logo.png">
+
+    <label class="btn btn-primary">
+    Upload <input type="file" hidden (change)="upload($event.target.files)">
+    
+  </label>
+</div>

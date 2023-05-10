@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add Car </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="add-car-page">
+  <form [formGroup]="carForm" (ngSubmit)="submitCarForm()">
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Brand</ion-label>
+        <ion-input type="text" formControlName="brand"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Model</ion-label>
+        <ion-input type="text" formControlName="model"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Type</ion-label>
+        <ion-input type="text" formControlName="type"></ion-input>
+      </ion-item>
+      <ion-item>
+        
+        <ion-label position="stacked">Year</ion-label>
+        <ion-input type="number" formControlName="year"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">license_plate</ion-label>
+        <ion-input type="text" formControlName="license_plate"></ion-input>
+      </ion-item>
+      <upload [image]="" (uploaded)="add_image_to_car($event)"></upload>
+    </ion-list>
+
+    <div class="buttons">
+      <button type="submit"  ion-button color="primary" expand="block">Add Car</button>
+    </div>
+    <div class="buttons">
+      <button [hidden]="!upload" type="submit" (click)="update_car()"  ion-button color="primary" expand="block">Update Car</button>
+    </div>
+  </form>
+</ion-content>

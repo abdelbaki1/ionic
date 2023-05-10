@@ -1,0 +1,38 @@
+<!--
+  Generated template for the AddInsurencePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>add-insurence</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h2>Choose a car</h2>
+  <page-cars [header]="no_header" (selectedcars)="add_car($event)"></page-cars>
+  
+  <div class="form-group">
+    <ion-item>
+      <ion-label>Choose A starting Date</ion-label>
+      <ion-datetime ></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Choose A Finishing Date</ion-label>
+      <ion-datetime ></ion-datetime>
+    </ion-item>
+  </div>
+  <h2>Choose an agency</h2>
+  <page-page-list>
+    <ion-searchbar></ion-searchbar>
+    <ion-icon name="add-circle" class="add-icon" slot="end"></ion-icon>
+  </page-page-list>
+  <button ion-button end>
+    Add-insurence
+  </button>
+</ion-content>

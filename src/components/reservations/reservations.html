@@ -1,0 +1,108 @@
+<main>
+  <article>
+    <section class="multi_step_form">
+      <form [formGroup]="rentalForm" id="msform">
+
+        <div class="tittle">
+          <h2>Reservation Process</h2>
+          <p>In order to rent a car, you have to flow this steps</p>
+        </div>
+        <!-- progressbar -->
+        <ul id="progressbar">
+          <li class="active" id="1">Select Rent Type</li>
+          <li id="2">Select Date</li>
+          <li id="3">Select Car</li>
+
+        </ul>
+        <ng-container *ngIf="selectedCars.length !=0">
+          <ion-card >
+            <ion-icon name="close-circle" (click)="selectedCars=[]"></ion-icon>
+            <ion-card-header>
+              Selected Cars:
+            </ion-card-header>
+            <ion-card-content class="d-block" *ngFor="let vehicle of selectedCars">
+              <p><strong>Brand:</strong> {{ vehicle.brand }}</p>
+              <p><strong>Model:</strong> {{ vehicle.model }}</p>
+  
+            </ion-card-content>
+          </ion-card>
+
+        </ng-container>
+        
+        <div>
+          <fieldset #rent id="rent_type">
+            <h3>Please select the rent type</h3>
+            <div class="form-group">
+              <select   formControlName="rentType"   class="product_select">
+                <option  selected hidden >Choose A Rent Type</option>
+                <option>Luxery</option>
+                <option>standart</option>
+
+              </select>
+            </div>
+
+            <!-- <button type="button" class="action-button previous previous_button">Back</button> -->
+            <a href="#" (click)="moveFieldsetToFirst('agency_select',2)" class="action-button">continue</a>
+          </fieldset>
+          <fieldset class="active" #test id="agency_select">
+            <h3>Please select the Date </h3>
+
+            <div class="form-group">
+              <ion-item>
+                <ion-label>Choose A starting Date</ion-label>
+                <ion-datetime formControlName="start_date"></ion-datetime>
+              </ion-item>
+              <ion-item>
+                <ion-label>Choose A Finishing Date</ion-label>
+                <ion-datetime formControlName="end_date"></ion-datetime>
+              </ion-item>
+            </div>
+            <button (click)="moveFieldsetToFirst('rent_type',2,true)" type="button"
+              class="action-button previous previous_button">Back</button>
+            <a href="#" (click)="moveFieldsetToFirst('car_select',3);selectedCars = []" class="action-button">Continue</a>
+          </fieldset>
+          <fieldset id="car_select">
+            <h3>Please select the car</h3>
+            <ion-list [formGroup]="filterparams">
+              <ion-item>
+                <ion-label>Brand</ion-label>
+                <ion-select formControlName="brand" >
+                  <ion-option *ngFor="let brand of brands" [value]="brand">{{ brand }}</ion-option>
+                </ion-select>
+              </ion-item>
+              <ion-item>
+                <ion-label>Seats</ion-label>
+                <ion-select formControlName="seats">
+                  <ion-option *ngFor="let seats of seatOptions" [value]="seats">{{ seats }}</ion-option>
+                </ion-select>
+              </ion-item>
+              <ion-item>
+                <ion-label>Year</ion-label>
+                <ion-select formControlName="year">
+                  <ion-option *ngFor="let year of yearOptions" [value]="year">{{ year }}</ion-option>
+                </ion-select>
+              </ion-item>
+              <ion-item>
+                <button ion-button block (click)="filter_car()">Apply Filters</button>
+              </ion-item>
+            </ion-list>
+            <ion-list>
+              <ion-item  [class.item-selected]="isSelected(vehicle)" *ngFor="let vehicle of filteredVehicles"
+                (click)="select_car(vehicle)" (dblclick)="detail_car()">
+                <ion-thumbnail item-start>
+                  <!-- <img [src]="vehicle.imageUrl"> -->
+                </ion-thumbnail>
+                <h2>{{ vehicle.brand }} {{ vehicle.model }}</h2>
+                <p>{{ vehicle.type }}</p>
+              </ion-item>
+            </ion-list>
+            <button (click)="moveFieldsetToFirst('agency_select',3,true)" type="button"
+              class="action-button previous previous_button">Back</button>
+            <a href="#" (click)="confirmRental()" class="action-button">Finish</a>
+          </fieldset>
+        </div>
+
+      </form>
+    </section>
+  </article>
+</main>

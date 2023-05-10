@@ -1,0 +1,106 @@
+page-rent-car {
+    overflow-y: auto;
+.payment-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .payment-title h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .payment-title img {
+    max-width: 100%;
+    margin-top: 1rem;
+  }
+  
+  .form-container {
+ 
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .field-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .field-container label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .field-container input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  #name {
+    max-width: 20rem;
+  }
+  
+  ion-item {
+    --padding-start: 0;
+    --padding-end: 0;
+  }
+  
+  ion-label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  ion-datetime {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  #cardnumber {
+    width: 100%;
+    max-width: 20rem;
+    background: url('../../assets/img/credit-card-icon.png') no-repeat;
+    background-position: right 0.5rem center;
+    background-size: auto 1.5rem;
+    padding: 0.5rem 2.5rem 0.5rem 0.5rem;
+    font-size: 1rem;
+  }
+  
+  #generatecard {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+  
+  #ccicon {
+    max-width: 10rem;
+    margin-top: 0.5rem;
+  }
+  
+  #expirationdate {
+    width: 100%;
+    max-width: 10rem;
+    background: url('../../assets/img/calendar-icon.png') no-repeat;
+    background-position: right 0.5rem center;
+    background-size: auto 1.5rem;
+    padding: 0.5rem 2.5rem 0.5rem 0.5rem;
+    font-size: 1rem;
+  }
+  
+  #securitycode {
+    width: 100%;
+    max-width: 5rem;
+    background: url('../../assets/img/lock-icon.png') no-repeat;
+    background-position: right 0.5rem center;
+    background-size: auto 1.5rem;
+    padding: 0.5rem 2.5rem 0.5rem 0.5rem;
+    font-size: 1rem;
+  }
+}

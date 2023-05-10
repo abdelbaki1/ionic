@@ -1,0 +1,136 @@
+page-car-detail {
+    overflow: auto;
+
+    .slider-item {
+        height: 70vh;
+        width: 100%;
+        background-size: cover;
+    }
+
+    .slide-zoom {
+        height: 100%;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.22)) !important;
+    }
+
+    .slide-text {
+        position: relative;
+        text-align: center;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .text-center {
+        text-align: center;
+        color: white;
+    }
+    ion-content {
+        padding: 16px;
+      
+        ion-card {
+          ion-card-header {
+            ion-card-title {
+              font-size: 24px;
+              font-weight: bold;
+            }
+      
+            ion-card-subtitle {
+              font-size: 14px;
+              color: #666;
+            }
+          }
+      
+          ion-card-content {
+            .row {
+              .col-lg-5, .col-md-5, .col-sm-6 {
+                .white-box {
+                  text-align: center;
+      
+                  img {
+                    max-width: 100%;
+                    height: auto;
+                  }
+                }
+              }
+      
+              .col-lg-7, .col-md-7, .col-sm-6 {
+                .box-title {
+                  font-size: 20px;
+                  font-weight: bold;
+                  margin-top: 16px;
+                }
+      
+                p {
+                  font-size: 14px;
+                  line-height: 1.5;
+                  color: #666;
+                  margin-bottom: 16px;
+                }
+      
+                h2 {
+                  font-size: 28px;
+                  font-weight: bold;
+                  margin-top: 32px;
+                  margin-bottom: 16px;
+      
+                  small {
+                    font-size: 14px;
+                    color: #28a745;
+                    margin-left: 8px;
+                  }
+                }
+      
+                ion-button {
+                  margin-right: 8px;
+                }
+      
+                ul.list-unstyled {
+                  margin-top: 32px;
+      
+                  li {
+                    display: flex;
+                    align-items: center;
+                    font-size: 14px;
+                    color: #666;
+      
+                    ion-icon {
+                      margin-right: 8px;
+                    }
+                  }
+                }
+              }
+      
+              .col-lg-12, .col-md-12, .col-sm-12 {
+                .box-title {
+                  font-size: 20px;
+                  font-weight: bold;
+                  margin-top: 32px;
+                  margin-bottom: 16px;
+                }
+      
+                ion-grid {
+                  ion-row {
+                    ion-col {
+                      font-size: 14px;
+                      color: #666;
+                    }
+      
+                    ion-col:first-child {
+                      font-weight: bold;
+                    }
+      
+                    ion-col:last-child {
+                      text-align: right;
+                    }
+                  }
+      
+                  ion-row:not(:last-child) {
+                    margin-bottom: 8px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      
+}

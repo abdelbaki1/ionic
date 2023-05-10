@@ -1,0 +1,115 @@
+<div class="container">
+  <div class="row">
+    <!-- BEGIN INVOICE -->
+    <div class="col-xs-12">
+      <div class="grid invoice">
+        <div class="grid-body">
+          <div class="invoice-title">
+            <div class="row">
+              <div class="col-xs-12">
+                <h2>Reservation<br>
+                  <span class="small"> #{{rental_object.id}}</span>
+                </h2>
+                <div class="col-xs-6 text-right">
+                  <address>
+                    <strong> Reservation date:</strong>
+                    {{rental_object.rent_date |date}}
+                   
+                  </address>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-xs-6">
+                <address>
+                  <strong>For:</strong>
+                  {{rental_object.user.first_name}}<br>
+                  {{rental_object.user.address}}<br>
+                  {{rental_object.user.last_name}}<br>
+                 <br>
+                  <ion-icon name="bookmarks"></ion-icon> {{rental_object.user.phone}} 
+                               </address>
+              </div>
+              <!-- <div class="col-xs-6 text-right">
+                <address>
+                  <strong>Requested car:</strong><br>
+                  {{rental_object.vehicle.brand}} <br>
+                  n° {{rental_object.vehicle.license_plate}} <br>
+                  {{rental_object.vehicle.model}} <br>
+
+                </address>
+              </div> -->
+            </div>
+            <div class="row">
+              <div class="col-xs-6">
+                <address>
+                  <strong>Payment Method:</strong><br>
+                  Visa ending **** 1234<br>
+                  h.elaine@gmail.com<br>
+                </address>
+              </div>
+              <div class="col-xs-6 text-right">
+                <address>
+                  <strong>Reservation Date:</strong><br>
+                  <strong>From </strong>{{rental_object.start_date |date}}<br>
+                  <strong>to</strong> {{rental_object.end_date |date}}<br>
+
+                </address>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <h3>Reservation SUMMARY</h3>
+                <table class="table table-striped">
+                  <thead>
+                    <tr class="line">
+                      <td></td>
+                      <td class="text-center"><strong>Car</strong></td>
+                      <td class="text-center"><strong>HRS</strong></td>
+                      <td class="text-right"><strong>RATE</strong></td>
+                      <td class="text-right"><strong>SUBTOTAL</strong></td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>       
+                      <td></td>        
+                      <td><strong> Type </strong>{{rental_object.vehicle.model}} <br>
+                        <strong>  License Plate n°</strong>{{rental_object.vehicle.license_plate}} <br>
+                          <strong> model </strong>{{rental_object.vehicle.model}}
+                      </td>
+
+                        <td class="text-center">15</td>
+                      <td class="text-center">{{rental_object.vehicle.hour_rate}} tnd</td>
+                      <td class="text-right">{{rental_object.vehicle.hour_rate*15}}tnd</td>
+                    </tr>
+                 
+                    <tr>
+                      <td colspan="3"></td>
+                      <td class="text-right"><strong>Taxes</strong></td>
+                      <td class="text-right"><strong>N/A</strong></td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                      </td>
+                      <td class="text-right"><strong>Total</strong></td>
+                      <td class="text-right"><strong>{{rental_object.vehicle.hour_rate*15}}tnd</strong></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 text-right identity">
+                 <button (click)="confirm_reservation()" ion-button>Confirm the reservation</button>
+                 <button (click)="navigate_to_change_car()" ion-button>Change the car</button>
+              </div>
+            
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END INVOICE -->
+    </div>
+  </div>

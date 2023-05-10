@@ -1,0 +1,93 @@
+page-add-incident {
+    #contact {
+        background-color: #f9f9f9;
+        padding: 50px 0;
+      
+        .form-group {
+          position: relative;
+      
+          .controls {
+            position: relative;
+      
+            input[type="text"],
+            input[type="email"],
+            textarea {
+              padding: 10px;
+              border: none;
+              border-radius: 0;
+              box-shadow: none;
+              font-size: 16px;
+              font-weight: 400;
+              width: 100%;
+              background: transparent;
+              color: #333;
+      
+              &:focus {
+                outline: none;
+              }
+      
+              &:focus ~ i {
+                color: #fdcc52;
+             }
+            }
+      
+            input[type="text"],
+            input[type="email"] {
+              border-bottom: 2px solid #e9e9e9;
+              padding-top: 20px;
+            }
+      
+            input[type="text"]:valid,
+            input[type="email"]:valid {
+              border-bottom: 2px solid #fdcc52;
+            }
+      
+            textarea {
+              padding-top: 20px;
+            }
+      
+            i {
+              position: absolute;
+              top: 0;
+              left: 0;
+              font-size: 16px;
+              color: #999;
+              transition: 0.3s;
+            }
+          }
+      
+          label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #999;
+            font-size: 16px;
+            font-weight: 400;
+            transition: 0.3s;
+          }
+        }
+      
+        .btn {
+          font-size: 16px;
+          font-weight: 400;
+          text-transform: uppercase;
+          border: none;
+          border-radius: 0;
+          box-shadow: none;
+          padding: 12px 30px;
+          transition: all 0.3s ease;
+          margin-top: 10px;
+          background-color: #fdcc52;
+          color: #fff;
+      
+          &:hover,
+          &:focus {
+            outline: none;
+            background-color: #333;
+            color: #fff;
+          }
+        }
+      }
+      
+
+}

@@ -1,0 +1,97 @@
+
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title text-center>
+      Reservations
+    </ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    
+  </ion-navbar>
+  
+</ion-header>
+<ion-content>
+  <section text-center margin-bottom>
+    <h1 style="font-size:1.4em" no-margin>Your list of reservation will be displayed here</h1>
+  </section>
+  <div class="container padding-bottom-3x mb-1">
+    <div *ngFor="let rental of rentals" class="card mb-3">
+      <div (click)="ttoggle()"  id="header" class="p-4 text-center text-white text-lg bg-dark rounded-top"><span class="text-uppercase">reservation  No - </span><span class="text-medium">{{rental.id}}</span>
+      <!-- <button  ion-button >click to toogle</button> -->
+     </div>
+      <div *ngIf="accordionExpanded" id="status" class="d-flex flex-wrap flex-sm-nowrap justify-content-between py-3 px-2 bg-secondary">
+        <div *ngIf="accordionExpanded" id="core" class="w-100 text-center py-1 px-2"><span class="text-medium">Status:</span> {{rental.status}}</div>
+        <!-- <div class="w-100 text-center py-1 px-2"><span class="text-medium">Expected Date:</span> SEP 09, 2017</div> -->
+      </div>
+      <div *ngIf="accordionExpanded" class="card-body">
+        <div class="steps d-flex flex-wrap flex-sm-nowrap justify-content-between padding-top-2x padding-bottom-1x">
+          <div class="step completed">
+            <div class="step-icon-wrap">
+              <div class="step-icon"><ion-icon name="cart"></ion-icon></div>
+            </div>
+            <h4 class="step-title">Confirmed reservation</h4>
+          </div>
+          <div id="procces" class="step" [class.completed]="rental.status=='processing'&&rental.status=='Check_car_availability'">
+            <div class="step-icon-wrap">
+              <div class="step-icon"><ion-icon name="settings"></ion-icon></div>
+            </div>
+            <h4 class="step-title">Processing reservation</h4>
+          </div>
+          <div id="Check_car_availability" class="step" [class.completed]="rental.status=='Check_car_availability'">
+            <div class="step-icon-wrap">
+              <div class="step-icon"><ion-icon name="car"></ion-icon></div>
+            </div>
+            <h4 class="step-title">confirm car availabilty</h4>
+          </div>
+          <div id="unpaid" class="step" [class.completed]="rental.status=='unpaid'">
+            <div class="step-icon-wrap">
+              <div class="step-icon"><ion-icon name="home"></ion-icon></div>
+            </div>
+            <h4 class="step-title">rent confirmed</h4>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="rental.status=='unpaid' &&accordionExpanded" class="d-flex">
+        <!-- Start DEMO HTML (Use the following code into your project)-->
+        <div class="payment-title">
+          <h1>Payment Information</h1>
+          <img height="100px" src="../../assets/img/visa-gold-recto-800x450.jpg" alt="">
+        </div>
+        
+        <div class="form-container">
+          <ion-item>
+            <ion-label position="floating">Name</ion-label>
+            <ion-input type="text" maxlength="20"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label position="floating">Card Number</ion-label>
+            <ion-input type="number" pattern="[0-9]*" inputmode="numeric"></ion-input>
+            <ion-icon slot="end" name="card"></ion-icon>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label position="floating">Expiration (mm/yy)</ion-label>
+            <ion-input type="text" pattern="[0-9]*" inputmode="numeric"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label position="floating">Security Code</ion-label>
+            <ion-input type="text" pattern="[0-9]*" inputmode="numeric"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label position="floating">Return Date</ion-label>
+            <ion-datetime displayFormat="MMM DD, YYYY" ></ion-datetime>
+          </ion-item>
+        </div>
+      
+        <!-- END EDMO HTML (Happy Coding!)-->
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+

@@ -1,0 +1,81 @@
+<!--
+  Generated template for the AdminChangeCarPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>admin-change-car</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <!-- <page-page-list></page-page-list> -->
+  <ion-card *ngIf="selectedCar">
+    <ion-icon name="close-circle" (click)="selectedCar=null"></ion-icon>
+    <ion-card-header>
+      Selected Car:
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Brand:</strong> {{ selectedCar.brand }}</p>
+      <p><strong>Model:</strong> {{ selectedCar.model }}</p>
+
+    </ion-card-content>
+  </ion-card>
+  <fieldset id="car_select">
+    <h3>Please select the car</h3>
+    <ion-list [formGroup]="vehicleForm">
+      <ion-item>
+        <ion-label>Brand</ion-label>
+        <ion-select formControlName="brand">
+          <ion-option *ngFor="let brand of brands" [value]="brand">{{ brand }}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Seats</ion-label>
+        <ion-select formControlName="seats">
+          <ion-option *ngFor="let seats of seatOptions" [value]="seats">{{ seats }}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Year</ion-label>
+        <ion-select formControlName="year">
+          <ion-option *ngFor="let year of yearOptions" [value]="year">{{ year }}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>age</ion-label>
+        <ion-select formControlName="age">
+          <ion-option *ngFor="let age of ageOptions" [value]="age">{{ age }}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Select the hour rate</ion-label>
+        <ion-select formControlName="hour_rate">
+          <ion-option *ngFor="let hour of rateOptions" [value]="hour">{{ hour }}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <button (click)="filter_car()" ion-button block>Apply Filters</button>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item [class.item-selected]="vehicle === selectedCar" *ngFor="let vehicle of vehicles"
+        (click)="select_car(vehicle)" (dblclick)="detail_car()">
+        <ion-thumbnail item-start>
+          <img [src]="vehicle.imageUrl">
+        </ion-thumbnail>
+        <h2>{{ vehicle.brand }} {{ vehicle.model }}</h2>
+        <p>{{ vehicle.type }}</p>
+      </ion-item>
+    </ion-list>
+    <!-- <button ion-button class="action-button previous previous_button">Back</button> -->
+
+  </fieldset>
+  <button ion-button (click)="confirm_car()">Confirm the car</button>
+
+</ion-content>

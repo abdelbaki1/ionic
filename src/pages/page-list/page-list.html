@@ -1,0 +1,30 @@
+<ion-content padding class="animated fadeIn common-bg">
+  <ng-content></ng-content>
+  <ion-list>
+    <ion-item-sliding (click)="detail(item.id)" *ngFor="let item of objects_list">
+      <ion-item >
+        
+        <p *ngFor="let col of columns">
+          <ion-thumbnail *ngIf="col=='image'" item-start>
+            <img src="/src/assets/img/bmw.jpg" alt="/assets/img/logo.png">
+          </ion-thumbnail>
+          <ng-container *ngIf="col!='image'">
+            <h2>{{col}}</h2> {{item[col]}}
+          </ng-container>
+          
+
+        </p>
+      </ion-item>
+      <ion-item-options side="right">
+
+        <button ion-button color="danger" (click)="delete(item.id)">
+          <ion-icon name="trash"></ion-icon>
+          Delete
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+    <ion-infinite-scroll (ionInfinite)="loadmore($event)">
+      <ion-infinite-scroll-content loadingText="Please wait..." loadingSpinner="bubbles"></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ion-list>
+</ion-content>

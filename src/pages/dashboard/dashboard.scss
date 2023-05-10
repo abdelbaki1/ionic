@@ -1,0 +1,145 @@
+page-dashboard {
+
+  ion-header {
+    ion-navbar {
+      ion-title {
+        text-align: center;
+        font-size: 1.2em;
+      }
+      
+      section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+        
+        ion-icon {
+          font-size: 2rem;
+          margin-bottom: 0.5rem;
+        }
+        
+        h1 {
+          font-size: 1.2em;
+          margin: 0;
+        }
+      }
+    }
+  }
+  
+  ion-content {
+    ion-grid {
+      ion-row {
+        ion-col {
+          ion-card {
+            button {
+              margin-bottom: 1rem;
+            }
+            
+            ion-card-header {
+              text-align: center;
+              font-size: 1.2em;
+            }
+            
+            ion-card-content {
+              canvas {
+                height: 150px; /* decrease the height */
+                width: 80%; /* decrease the width */
+                margin: auto; /* center the canvas */
+              }
+            }
+          }
+        }
+      }
+      
+      &:last-of-type {
+        ion-row {
+          ion-col {
+            ion-card {
+              padding: 1rem;
+              // color: #0039a2;
+              
+              ion-icon {
+                font-size: 3rem;
+                margin-bottom: 0.5rem;
+              }
+              
+              h2 {
+                font-size: 1.2em;
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  custom-grid {
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    padding: 10px;
+  }
+  
+  ion-calendar {
+    border: none;
+    margin-bottom: 10px;
+  }
+  .selected-date {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .date-message {
+    font-style: italic;
+    color: #666;
+  }
+
+  .month-message {
+    font-weight: bold;
+    color: #333;
+  }
+}
+
+.custom-calendar {
+  border: none;
+  margin-bottom: 10px;
+
+  .item-has-focus {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  .month-picker {
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ccc;
+
+    .month-item {
+      color: #333;
+    }
+
+    .month-item-selected {
+      color: #007bff;
+    }
+  }
+
+  .days {
+    border-collapse: collapse;
+
+    td {
+      border: 1px solid #ccc;
+      text-align: center;
+      font-size: 14px;
+      color: #333;
+
+      &.disabled {
+        color: #ccc;
+      }
+
+      &.selected {
+        background-color: #007bff;
+        color: #fff;
+      }
+    }
+  }
+}
+

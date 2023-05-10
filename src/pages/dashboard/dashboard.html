@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title class="custom-title">Car rental platform</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-buttons end>
+      <button ion-button tappable> <ion-icon name="notifications"></ion-icon>
+      </button>
+      <button (click)="logout()" ion-button>
+        <ion-icon  name="log-out"></ion-icon>
+      </button>
+
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content>
+  <ion-grid class="custom-grid">
+    <ion-calendar #calendar [events]="currentEvents" (onDaySelect)="ondatechange($event)"></ion-calendar>
+    <ion-item class="selected-date" *ngIf="selectedDate">
+      <p cla>{{ selectedDate.year}}/{{selectedDate.month}}/{{selectedDate.date }}</p>
+      <p>Reservation Voiture termineé </p>
+    </ion-item>
+  </ion-grid>
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            Total rented cars
+          </ion-card-header>
+          <ion-card-content>
+            <canvas style="display: block;height: 210px;width: 380px;" #pieCanvas></canvas>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            Monthly Car Rentals
+          </ion-card-header>
+          <ion-card-content>
+            <canvas style="display: block;height: 250px;width: 480px;" #barCanvas></canvas>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  
+
+
+  <!-- <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <ion-card text-center padding color="success">
+          <ion-icon name="person"></ion-icon>
+          <h2>Profile</h2>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6>
+        <ion-card text-center padding color="success">
+          <ion-icon name="people"></ion-icon>
+          <h2>Users</h2>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>
+        <ion-card text-center padding color="success">
+          <ion-icon name="settings"></ion-icon>
+          <h2>Settings</h2>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6>
+        <ion-card text-center padding color="success">
+          <ion-icon name="list"></ion-icon>
+          <h2>Reservation</h2>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>
+        <ion-card text-center padding color="success">
+          <ion-icon name="calendar"></ion-icon>
+          <h2>Car Maintenence</h2>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+</ion-content>

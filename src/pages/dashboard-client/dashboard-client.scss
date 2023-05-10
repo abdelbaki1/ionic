@@ -1,0 +1,31 @@
+page-dashboard-client {
+    ion-item.selected-date {
+        background-color: #F5F5F5;
+        font-size: 24px;
+        font-weight: bold;
+        padding: 10px;
+      }
+      
+      ion-list.events {
+        margin-top: 20px;
+      }
+      
+      ion-item.event {
+        border-bottom: 1px solid #D3D3D3;
+        padding: 10px;
+      }
+      
+      ion-item.event:last-child {
+        border-bottom: none;
+      }
+      
+      ion-label.event-title {
+        font-weight: bold;
+      }
+      
+      ion-note.event-description {
+        font-size: 14px;
+        font-style: italic;
+      }
+
+}

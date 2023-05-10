@@ -1,0 +1,54 @@
+<div *ngIf="header"> 
+  <ion-header >
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Cars List</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+</div>
+
+<ion-content>
+  <page-page-list [columns]="['brand','model','image']" [objects_list]="vehicles" (detail_emitter)="detail_car($event)"
+    (delete_emitter)="delete($event)" (onend)="loadcars($event)">
+    <ion-searchbar style="margin-top: 50px;"></ion-searchbar>
+    <ion-icon  (click)="to_add_car()" name="add-circle" class="add-icon" slot="end"></ion-icon>
+    <ion-list [formGroup]="vehicleForm">
+      <ion-item>
+        <ion-label>Brand</ion-label>
+        <ion-select formControlName="brand">
+          <ion-option *ngFor="let brand of brands" [value]="brand">{{ brand }}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Seats</ion-label>
+        <ion-select formControlName="seats">
+          <ion-option *ngFor="let seats of seatOptions" [value]="seats">{{ seats }}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Year</ion-label>
+        <ion-select formControlName="year">
+          <ion-option *ngFor="let year of yearOptions" [value]="year">{{ year }}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>age</ion-label>
+        <ion-select formControlName="age">
+          <ion-option *ngFor="let age of ageOptions" [value]="age">{{ age }}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Select the hour rate</ion-label>
+        <ion-select formControlName="hour_rate">
+          <ion-option *ngFor="let hour of rateOptions" [value]="hour">{{ hour }}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <button (click)="filterCar()" ion-button block>Apply Filters</button>
+      </ion-item>
+    </ion-list>
+  </page-page-list>
+</ion-content>
