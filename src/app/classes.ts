@@ -44,18 +44,19 @@ export class Vehicle {
     type: string;
     status : string;
     hour_rate : number
-    constructor(id: number, licensePlate: string, brand: string, model: string, type: string, status: string) {
+    constructor(id: number, licensePlate: string, brand: string, model: string, type: string, status: string,image?:string) {
       this.id = id;
       this.license_plate = licensePlate;
       this.brand = brand;
       this.model = model;
       this.type = type;
       this.status = status;
+      this.image = image
       
     }
   
-    static fromObject(obj: any): Vehicle {
-      return new Vehicle(obj.id, obj.licensePlate, obj.brand, obj.model, obj.type, obj.status);
+    static fromObject(obj: Vehicle): Vehicle {
+      return new Vehicle(obj.id, obj.license_plate, obj.brand, obj.model, obj.type, obj.status,obj.image);
     }
   
     static toObject(vehicle: Vehicle): any {

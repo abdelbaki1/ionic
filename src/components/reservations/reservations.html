@@ -90,7 +90,7 @@
               <ion-item  [class.item-selected]="isSelected(vehicle)" *ngFor="let vehicle of filteredVehicles"
                 (click)="select_car(vehicle)" (dblclick)="detail_car()">
                 <ion-thumbnail item-start>
-                  <!-- <img [src]="vehicle.imageUrl"> -->
+                  <img src="{{vehicle.image}}">
                 </ion-thumbnail>
                 <h2>{{ vehicle.brand }} {{ vehicle.model }}</h2>
                 <p>{{ vehicle.type }}</p>

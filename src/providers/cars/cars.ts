@@ -37,7 +37,7 @@ export class CarsProvider {
   addVehicle(vehicle: Vehicle): Promise<any> {
     return this.initPromise.then(() => {
       return this.database.executeSql(
-        "INSERT INTO vehicles (image,age, license_plate, brand, model, type, status) VALUES (?,?, ?, ?, ?, ?, ?)",
+        "INSERT INTO vehicles (image ,age, license_plate, brand, model, type, status) VALUES (? ,?, ?, ?, ?, ?, ?)",
         [
           vehicle.image,
           vehicle.age,

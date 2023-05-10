@@ -50,6 +50,8 @@ export class PageListPage {
   }
 
   ionViewWillEnter() {
+    console.log(this.objects_list);
+    
     // this.search.pickup = "Rio de Janeiro, Brazil";
     // this.search.dropOff = "Same as pickup";
     this.storage.get('pickup').then((val) => {

@@ -46,6 +46,7 @@ export class AddCarPage {
         ]),
       ],
       license_plate: ["", Validators.required],
+      image : ["",Validators.required]
     });
     if (this.navParam.get("id")) {
       this.upload = true
@@ -74,7 +75,7 @@ export class AddCarPage {
   }
   add_image_to_car(image) {
     console.log(image);
-    this.carForm.setValue({'image':image})
+    this.carForm.patchValue({'image':image})
     console.log(this.carForm.getRawValue);
     
 

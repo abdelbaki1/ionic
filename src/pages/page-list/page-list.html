@@ -6,7 +6,7 @@
         
         <p *ngFor="let col of columns">
           <ion-thumbnail *ngIf="col=='image'" item-start>
-            <img src="/src/assets/img/bmw.jpg" alt="/assets/img/logo.png">
+            <img src="{{ item['image'] }}" alt="/assets/img/logo.png">
           </ion-thumbnail>
           <ng-container *ngIf="col!='image'">
             <h2>{{col}}</h2> {{item[col]}}
